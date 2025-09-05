@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pintores de Elite - Transforme sua Carreira</title>
+    <title>Pintores de Elite - Matemática Aplicada à Pintura</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -215,15 +215,104 @@
             color: var(--secondary);
         }
 
-        /* Gallery Section */
-        .gallery {
+        /* Matemática Section */
+        .math-section {
             padding: 5rem 0;
             background: linear-gradient(135deg, var(--secondary) 0%, #3A506B 100%);
             color: white;
         }
 
-        .gallery .section-title h2 {
+        .math-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .calculator {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            color: var(--dark);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .calculator h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .calculator button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
             color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .calculator button:hover {
+            background: #e55a2b;
+        }
+
+        .result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .math-info h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .math-info p {
+            margin-bottom: 1rem;
+        }
+
+        .math-examples {
+            margin-top: 2rem;
+        }
+
+        .math-example {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+
+        .gallery .section-title h2 {
+            color: var(--secondary);
         }
 
         .gallery-grid {
@@ -270,7 +359,7 @@
         /* Testimonials */
         .testimonials {
             padding: 5rem 0;
-            background-color: var(--light);
+            background-color: white;
         }
 
         .testimonials-grid {
@@ -392,6 +481,32 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .footer-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-section input {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .footer-section button {
+            padding: 0.8rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .footer-section button:hover {
+            background: var(--accent);
+        }
+
         /* Animações */
         @keyframes fadeInDown {
             from {
@@ -445,6 +560,14 @@
             .hero p {
                 font-size: 1.2rem;
             }
+            
+            .math-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -459,6 +582,7 @@
             <nav>
                 <ul>
                     <li><a href="#features">Técnicas</a></li>
+                    <li><a href="#math">Matemática</a></li>
                     <li><a href="#gallery">Galeria</a></li>
                     <li><a href="#testimonials">Depoimentos</a></li>
                     <li><a href="#cta">Workshops</a></li>
@@ -504,6 +628,64 @@
                     </div>
                     <h3>Técnicas de Acabamento</h3>
                     <p>Conheça as técnicas que farão seu trabalho se destacar pela qualidade superior.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matemática Section -->
+    <section class="math-section" id="math">
+        <div class="container">
+            <div class="section-title">
+                <h2>Matemática Aplicada à Pintura</h2>
+            </div>
+            <div class="math-content">
+                <div class="calculator">
+                    <h3>Calculadora de Tinta</h3>
+                    <div class="form-group">
+                        <label for="largura">Largura da Parede (m):</label>
+                        <input type="number" id="largura" placeholder="Ex: 4.5" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="altura">Altura da Parede (m):</label>
+                        <input type="number" id="altura" placeholder="Ex: 2.8" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="portas">Nº de Portas:</label>
+                        <input type="number" id="portas" placeholder="Ex: 1" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="janelas">Nº de Janelas:</label>
+                        <input type="number" id="janelas" placeholder="Ex: 2" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="demao">Nº de Demãos:</label>
+                        <input type="number" id="demao" placeholder="Ex: 2" value="2">
+                    </div>
+                    <button onclick="calcularTinta()">Calcular Quantidade de Tinta</button>
+                    <div class="result" id="resultado">
+                        Resultado aparecerá aqui
+                    </div>
+                </div>
+                <div class="math-info">
+                    <h3>A Matemática por Trás de uma Pintura Perfeita</h3>
+                    <p>A pintura profissional envolve diversos cálculos matemáticos para garantir economia, precisão e qualidade no trabalho.</p>
+                    <p>Desde o cálculo da área a ser pintada até a diluição correta da tinta, a matemática está presente em todas as etapas.</p>
+                    
+                    <div class="math-examples">
+                        <div class="math-example">
+                            <h4>Fórmula de Cálculo de Área</h4>
+                            <p>Área = (Largura × Altura) - (Área de portas e janelas)</p>
+                        </div>
+                        <div class="math-example">
+                            <h4>Rendimento da Tinta</h4>
+                            <p>Litros necessários = (Área total × Nº de demãos) / Rendimento por litro</p>
+                        </div>
+                        <div class="math-example">
+                            <h4>Proporções de Diluição</h4>
+                            <p>Água : Tinta = normalmente 20% : 80% para tintas acrílicas</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -612,8 +794,8 @@
                     <h3>Newsletter</h3>
                     <p>Inscreva-se para receber dicas e novidades exclusivas</p>
                     <form>
-                        <input type="email" placeholder="Seu e-mail" style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: 5px; border: none;">
-                        <button type="submit" style="padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer;">Inscrever</button>
+                        <input type="email" placeholder="Seu e-mail">
+                        <button type="submit">Inscrever</button>
                     </form>
                 </div>
             </div>
@@ -622,5 +804,47 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Função para calcular a quantidade de tinta necessária
+        function calcularTinta() {
+            // Obter valores dos inputs
+            const largura = parseFloat(document.getElementById('largura').value) || 0;
+            const altura = parseFloat(document.getElementById('altura').value) || 0;
+            const portas = parseInt(document.getElementById('portas').value) || 0;
+            const janelas = parseInt(document.getElementById('janelas').value) || 0;
+            const demao = parseInt(document.getElementById('demao').value) || 2;
+            
+            // Calcular área total da parede
+            const areaParede = largura * altura;
+            
+            // Subtrair área de portas e janelas (estimativa padrão)
+            const areaPortas = portas * 1.6; // 1.6m² por porta
+            const areaJanelas = janelas * 1.2; // 1.2m² por janela
+            
+            // Área total a ser pintada
+            const areaTotal = areaParede - areaPortas - areaJanelas;
+            
+            // Calcular litros de tinta necessários (considerando rendimento de 10m² por litro por demão)
+            const rendimentoPorLitro = 10;
+            const litrosNecessarios = (areaTotal * demao) / rendimentoPorLitro;
+            
+            // Exibir resultado
+            const resultadoDiv = document.getElementById('resultado');
+            
+            if (areaTotal <= 0) {
+                resultadoDiv.innerHTML = "Por favor, insira valores válidos para largura e altura.";
+                resultadoDiv.style.color = "red";
+            } else {
+                resultadoDiv.innerHTML = `
+                    <p>Área total a ser pintada: <strong>${areaTotal.toFixed(2)} m²</strong></p>
+                    <p>Tinta necessária: <strong>${litrosNecessarios.toFixed(2)} litros</strong></p>
+                    <p>Latas de 3.6L: <strong>${Math.ceil(litrosNecessarios / 3.6)}</strong></p>
+                    <p>Latas de 18L: <strong>${Math.ceil(litrosNecessarios / 18)}</strong></p>
+                `;
+                resultadoDiv.style.color = "green";
+            }
+        }
+    </script>
 </body>
 </html>
