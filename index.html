@@ -45,25 +45,54 @@
             <div class="calculator">
                 <div class="form-group">
                     <label for="largura">Largura da Parede (m):</label>
-                    <input type="number" id="largura" placeholder="Ex: 4.5" step="0.1">
+                    <input type="number" id="largura" placeholder="Ex: 4.5" step="0.1" min="0.1">
                 </div>
                 <div class="form-group">
                     <label for="altura">Altura da Parede (m):</label>
-                    <input type="number" id="altura" placeholder="Ex: 2.8" step="0.1">
+                    <input type="number" id="altura" placeholder="Ex: 2.8" step="0.1" min="0.1">
                 </div>
+                
                 <div class="form-group">
                     <label for="portas">Nº de Portas:</label>
-                    <input type="number" id="portas" placeholder="Ex: 1" value="0">
+                    <input type="number" id="portas" placeholder="Ex: 1" value="0" min="0" onchange="toggleDimensions('portas', 'portas-dimensions')">
                 </div>
+                <div id="portas-dimensions" class="dimensions-container" style="display: none;">
+                    <div class="form-group">
+                        <label for="porta-largura">Largura média das portas (m):</label>
+                        <input type="number" id="porta-largura" placeholder="Ex: 0.8" step="0.1" min="0.1" value="0.8">
+                    </div>
+                    <div class="form-group">
+                        <label for="porta-altura">Altura média das portas (m):</label>
+                        <input type="number" id="porta-altura" placeholder="Ex: 2.1" step="0.1" min="0.1" value="2.1">
+                    </div>
+                </div>
+                
                 <div class="form-group">
                     <label for="janelas">Nº de Janelas:</label>
-                    <input type="number" id="janelas" placeholder="Ex: 2" value="0">
+                    <input type="number" id="janelas" placeholder="Ex: 2" value="0" min="0" onchange="toggleDimensions('janelas', 'janelas-dimensions')">
                 </div>
+                <div id="janelas-dimensions" class="dimensions-container" style="display: none;">
+                    <div class="form-group">
+                        <label for="janela-largura">Largura média das janelas (m):</label>
+                        <input type="number" id="janela-largura" placeholder="Ex: 1.2" step="0.1" min="0.1" value="1.2">
+                    </div>
+                    <div class="form-group">
+                        <label for="janela-altura">Altura média das janelas (m):</label>
+                        <input type="number" id="janela-altura" placeholder="Ex: 1.0" step="0.1" min="0.1" value="1.0">
+                    </div>
+                </div>
+                
                 <div class="form-group">
                     <label for="demao">Nº de Demãos:</label>
-                    <input type="number" id="demao" placeholder="Ex: 2" value="2">
+                    <input type="number" id="demao" placeholder="Ex: 2" value="2" min="1">
                 </div>
-                <button onclick="calcularTinta()">Calcular Quantidade de Tinta</button>
+                
+                <div class="form-group">
+                    <label for="rendimento">Rendimento da tinta (m² por litro):</label>
+                    <input type="number" id="rendimento" placeholder="Ex: 10" value="10" step="0.1" min="1">
+                </div>
+                
+                <button id="calcular-btn">Calcular Quantidade de Tinta</button>
                 <div class="result" id="resultado">
                     Resultado aparecerá aqui
                 </div>
@@ -74,9 +103,9 @@
                 <p>O cálculo considera:</p>
                 <ul>
                     <li>Área total da parede (largura x altura)</li>
-                    <li>Subtração de portas (1,6m² cada) e janelas (1,2m² cada)</li>
+                    <li>Subtração de portas e janelas com base nas dimensões informadas</li>
                     <li>Número de demãos desejadas</li>
-                    <li>Rendimento padrão de 10m² por litro de tinta por demão</li>
+                    <li>Rendimento informado da tinta (m² por litro)</li>
                 </ul>
             </div>
         </div>
@@ -114,46 +143,6 @@
         </div>
     </footer>
 
-    <script>
-        // Função para calcular a quantidade de tinta necessária
-        function calcularTinta() {
-            // Obter valores dos inputs
-            const largura = parseFloat(document.getElementById('largura').value) || 0;
-            const altura = parseFloat(document.getElementById('altura').value) || 0;
-            const portas = parseInt(document.getElementById('portas').value) || 0;
-            const janelas = parseInt(document.getElementById('janelas').value) || 0;
-            const demao = parseInt(document.getElementById('demao').value) || 2;
-            
-            // Calcular área total da parede
-            const areaParede = largura * altura;
-            
-            // Subtrair área de portas e janelas (estimativa padrão)
-            const areaPortas = portas * 1.6; // 1.6m² por porta
-            const areaJanelas = janelas * 1.2; // 1.2m² por janela
-            
-            // Área total a ser pintada
-            const areaTotal = areaParede - areaPortas - areaJanelas;
-            
-            // Calcular litros de tinta necessários (considerando rendimento de 10m² por litro por demão)
-            const rendimentoPorLitro = 10;
-            const litrosNecessarios = (areaTotal * demao) / rendimentoPorLitro;
-            
-            // Exibir resultado
-            const resultadoDiv = document.getElementById('resultado');
-            
-            if (areaTotal <= 0) {
-                resultadoDiv.innerHTML = "Por favor, insira valores válidos para largura e altura.";
-                resultadoDiv.style.color = "#e74c3c";
-            } else {
-                resultadoDiv.innerHTML = `
-                    <p>Área total a ser pintada: <strong>${areaTotal.toFixed(2)} m²</strong></p>
-                    <p>Tinta necessária: <strong>${litrosNecessarios.toFixed(2)} litros</strong></p>
-                    <p>Latas de 3.6L: <strong>${Math.ceil(litrosNecessarios / 3.6)}</strong></p>
-                    <p>Latas de 18L: <strong>${Math.ceil(litrosNecessarios / 18)}</strong></p>
-                `;
-                resultadoDiv.style.color = "#27ae60";
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
