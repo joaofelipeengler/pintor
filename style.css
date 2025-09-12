@@ -10,14 +10,12 @@
     --accent: #F9C80E;
     --light: #F8F9FA;
     --dark: #212529;
-    --success: #4CAF50;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--dark);
     line-height: 1.6;
-    overflow-x: hidden;
     background-color: var(--light);
 }
 
@@ -28,21 +26,21 @@ h1, h2, h3, h4, h5 {
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 15px;
 }
 
 /* Header e Navegação */
 header {
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+    background: var(--secondary);
     color: white;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
@@ -58,13 +56,12 @@ header {
 }
 
 .logo i {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--accent);
 }
 
 .logo h1 {
-    font-size: 1.8rem;
-    font-weight: 900;
+    font-size: 1.5rem;
 }
 
 nav ul {
@@ -78,26 +75,10 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
-    position: relative;
 }
 
 nav a:hover {
     color: var(--accent);
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background-color: var(--accent);
-    transition: width 0.3s;
-}
-
-nav a:hover::after {
-    width: 100%;
 }
 
 /* Hero Section */
@@ -107,141 +88,55 @@ nav a:hover::after {
     background-position: center;
     color: white;
     text-align: center;
-    padding: 10rem 0 6rem;
-    margin-top: 76px;
+    padding: 7rem 0 4rem;
+    margin-top: 60px;
 }
 
 .hero h2 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    animation: fadeInDown 1s ease;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
 }
 
 .hero p {
-    font-size: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    animation: fadeInUp 1s ease;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.btn {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: all 0.3s;
-    border: 2px solid var(--primary);
-    animation: pulse 2s infinite;
-}
-
-.btn:hover {
-    background: transparent;
-    color: var(--primary);
-    animation: none;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Features Section */
-.features {
-    padding: 5rem 0;
+/* Calculator Section */
+.calculator-section {
+    padding: 3rem 0;
     background-color: white;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
+    margin-bottom: 2rem;
 }
 
 .section-title h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--secondary);
-    display: inline-block;
-}
-
-.section-title h2::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: var(--primary);
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.feature-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    text-align: center;
-    padding: 2rem;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-}
-
-.feature-icon {
-    font-size: 3rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--secondary);
-}
-
-/* Matemática Section */
-.math-section {
-    padding: 5rem 0;
-    background: linear-gradient(135deg, var(--secondary) 0%, #000000 100%);
-    color: white;
-}
-
-.math-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .calculator {
-    background: white;
+    background: #f8f9fa;
     padding: 2rem;
     border-radius: 10px;
-    color: var(--dark);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-.calculator h3 {
-    color: var(--secondary);
-    margin-bottom: 1.5rem;
-    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
+    color: var(--secondary);
 }
 
 .form-group input {
@@ -249,6 +144,7 @@ nav a:hover::after {
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 .calculator button {
@@ -261,6 +157,8 @@ nav a:hover::after {
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s;
+    font-size: 1.1rem;
+    margin-top: 1rem;
 }
 
 .calculator button:hover {
@@ -269,168 +167,56 @@ nav a:hover::after {
 
 .result {
     margin-top: 1.5rem;
-    padding: 1rem;
-    background: #f8f9fa;
+    padding: 1.2rem;
+    background: white;
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
+    border-left: 4px solid #27ae60;
+}
+
+.math-info {
+    background: var(--secondary);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
 }
 
 .math-info h3 {
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-}
-
-.math-info p {
     margin-bottom: 1rem;
+    color: var(--accent);
 }
 
-.math-examples {
-    margin-top: 2rem;
+.math-info ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
 }
 
-.math-example {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+.math-info li {
+    margin-bottom: 0.5rem;
 }
 
-/* Gallery Section */
-.gallery {
-    padding: 5rem 0;
-    background-color: var(--light);
+/* About Section */
+.about {
+    padding: 3rem 0;
+    background-color: #f8f9fa;
 }
 
-.gallery .section-title h2 {
-    color: var(--secondary);
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.gallery-item {
-    height: 250px;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
-
-.gallery-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.8));
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.gallery-item:hover::after {
-    opacity: 1;
-}
-
-/* Testimonials */
-.testimonials {
-    padding: 5rem 0;
-    background-color: white;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.testimonial-card {
-    background: white;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    position: relative;
-}
-
-.testimonial-card::before {
-    content: '"';
-    font-size: 5rem;
-    color: var(--primary);
-    opacity: 0.2;
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    font-family: Georgia, serif;
-}
-
-.testimonial-text {
-    margin-bottom: 1.5rem;
-    font-style: italic;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.author-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* CTA Section */
-.cta {
-    padding: 5rem 0;
-    background: linear-gradient(135deg, var(--primary) 0%, #FF8C42 100%);
-    color: white;
+.about-content {
     text-align: center;
-}
-
-.cta h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.cta p {
-    font-size: 1.2rem;
     max-width: 700px;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
 }
 
-.btn-light {
-    background: white;
-    color: var(--primary);
-}
-
-.btn-light:hover {
-    background: transparent;
-    color: white;
-    border-color: white;
+.about-content p {
+    margin-bottom: 1rem;
 }
 
 /* Footer */
 footer {
     background: var(--dark);
     color: white;
-    padding: 3rem 0 1rem;
+    padding: 2rem 0 1rem;
 }
 
 .footer-content {
@@ -441,96 +227,25 @@ footer {
 }
 
 .footer-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
     color: var(--accent);
 }
 
 .footer-section p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-.social-icons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.social-icons a {
-    color: white;
-    font-size: 1.5rem;
-    transition: color 0.3s;
-}
-
-.social-icons a:hover {
+.footer-section i {
+    margin-right: 0.5rem;
     color: var(--accent);
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-section form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.footer-section input {
-    padding: 0.8rem;
-    border: none;
-    border-radius: 5px;
-}
-
-.footer-section button {
-    padding: 0.8rem;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.footer-section button:hover {
-    background: var(--accent);
-}
-
-/* Animações */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
+    font-size: 0.9rem;
 }
 
 /* Responsividade */
@@ -539,21 +254,21 @@ footer {
         flex-direction: column;
         gap: 1rem;
     }
-
+    
     nav ul {
         gap: 1rem;
     }
-
-    .hero h2 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
+    
+    .hero {
+        padding: 6rem 0 3rem;
     }
     
-    .math-content {
-        grid-template-columns: 1fr;
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
     }
     
     .footer-content {
