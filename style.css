@@ -5,11 +5,11 @@
 }
 
 :root {
-    --primary: #00bfbf;
-    --secondary: #000000;
-    --accent: #00bfbf;
-    --light: #000000;
-    --dark: #000000;
+    --primary: #FF6B35;
+    --secondary: #2F4858;
+    --accent: #F9C80E;
+    --light: #F8F9FA;
+    --dark: #212529;
 }
 
 body {
@@ -145,6 +145,14 @@ nav a:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+}
+
+.dimensions-container {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--accent);
 }
 
 .calculator button {
