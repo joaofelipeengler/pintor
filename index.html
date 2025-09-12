@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pintores de Elite - Matemática Aplicada à Pintura</title>
+    <title>Calculadora de Tinta - Pintores de Elite</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,11 +18,8 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#features">Técnicas</a></li>
-                    <li><a href="#math">Matemática</a></li>
-                    <li><a href="#gallery">Galeria</a></li>
-                    <li><a href="#testimonials">Depoimentos</a></li>
-                    <li><a href="#cta">Workshops</a></li>
+                    <li><a href="#calculator">Calculadora</a></li>
+                    <li><a href="#about">Sobre</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
@@ -32,178 +29,69 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2>Transforme sua paixão em uma carreira de sucesso</h2>
-            <p>Aprenda técnicas avançadas, gestão de negócios e como se destacar no mercado da pintura profissional</p>
-            <a href="#cta" class="btn">Comece sua Transformação</a>
+            <h2>Calculadora de Tinta Inteligente</h2>
+            <p>Calcule exatamente a quantidade de tinta necessária para seus projetos e evite desperdícios</p>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- Calculator Section -->
+    <section class="calculator-section" id="calculator">
         <div class="container">
             <div class="section-title">
-                <h2>Técnicas Profissionais</h2>
+                <h2>Calculadora de Tinta</h2>
+                <p>Preencha os dados abaixo para calcular a quantidade de tinta necessária</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-brush"></i>
-                    </div>
-                    <h3>Preparação de Superfícies</h3>
-                    <p>Aprenda os segredos para um preparo perfeito que garante a durabilidade da pintura.</p>
+            
+            <div class="calculator">
+                <div class="form-group">
+                    <label for="largura">Largura da Parede (m):</label>
+                    <input type="number" id="largura" placeholder="Ex: 4.5" step="0.1">
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Uso Correto de Ferramentas</h3>
-                    <p>Domine todas as ferramentas do trade para obter resultados profissionais impecáveis.</p>
+                <div class="form-group">
+                    <label for="altura">Altura da Parede (m):</label>
+                    <input type="number" id="altura" placeholder="Ex: 2.8" step="0.1">
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Técnicas de Acabamento</h3>
-                    <p>Conheça as técnicas que farão seu trabalho se destacar pela qualidade superior.</p>
+                <div class="form-group">
+                    <label for="portas">Nº de Portas:</label>
+                    <input type="number" id="portas" placeholder="Ex: 1" value="0">
                 </div>
+                <div class="form-group">
+                    <label for="janelas">Nº de Janelas:</label>
+                    <input type="number" id="janelas" placeholder="Ex: 2" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="demao">Nº de Demãos:</label>
+                    <input type="number" id="demao" placeholder="Ex: 2" value="2">
+                </div>
+                <button onclick="calcularTinta()">Calcular Quantidade de Tinta</button>
+                <div class="result" id="resultado">
+                    Resultado aparecerá aqui
+                </div>
+            </div>
+            
+            <div class="math-info">
+                <h3>Como funciona o cálculo?</h3>
+                <p>O cálculo considera:</p>
+                <ul>
+                    <li>Área total da parede (largura x altura)</li>
+                    <li>Subtração de portas (1,6m² cada) e janelas (1,2m² cada)</li>
+                    <li>Número de demãos desejadas</li>
+                    <li>Rendimento padrão de 10m² por litro de tinta por demão</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Matemática Section -->
-    <section class="math-section" id="math">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>Matemática Aplicada à Pintura</h2>
+                <h2>Sobre Nós</h2>
             </div>
-            <div class="math-content">
-                <div class="calculator">
-                    <h3>Calculadora de Tinta</h3>
-                    <div class="form-group">
-                        <label for="largura">Largura da Parede (m):</label>
-                        <input type="number" id="largura" placeholder="Ex: 4.5" step="0.1">
-                    </div>
-                    <div class="form-group">
-                        <label for="altura">Altura da Parede (m):</label>
-                        <input type="number" id="altura" placeholder="Ex: 2.8" step="0.1">
-                    </div>
-                    <div class="form-group">
-                        <label for="portas">Nº de Portas:</label>
-                        <input type="number" id="portas" placeholder="Ex: 1" value="0">
-                    </div>
-                    <div class="form-group">
-                        <label for="janelas">Nº de Janelas:</label>
-                        <input type="number" id="janelas" placeholder="Ex: 2" value="0">
-                    </div>
-                    <div class="form-group">
-                        <label for="demao">Nº de Demãos:</label>
-                        <input type="number" id="demao" placeholder="Ex: 2" value="2">
-                    </div>
-                    <button onclick="calcularTinta()">Calcular Quantidade de Tinta</button>
-                    <div class="result" id="resultado">
-                        Resultado aparecerá aqui
-                    </div>
-                </div>
-                <div class="math-info">
-                    <h3>A Matemática por Trás de uma Pintura Perfeita</h3>
-                    <p>A pintura profissional envolve diversos cálculos matemáticos para garantir economia, precisão e qualidade no trabalho.</p>
-                    <p>Desde o cálculo da área a ser pintada até a diluição correta da tinta, a matemática está presente em todas as etapas.</p>
-                    
-                    <div class="math-examples">
-                        <div class="math-example">
-                            <h4>Fórmula de Cálculo de Área</h4>
-                            <p>Área = (Largura × Altura) - (Área de portas e janelas)</p>
-                        </div>
-                        <div class="math-example">
-                            <h4>Rendimento da Tinta</h4>
-                            <p>Litros necessários = (Área total × Nº de demãos) / Rendimento por litro</p>
-                        </div>
-                        <div class="math-example">
-                            <h4>Proporções de Diluição</h4>
-                            <p>Água : Tinta = normalmente 20% : 80% para tintas acrílicas</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="about-content">
+                <p>Pintores de Elite é uma plataforma dedicada a ajudar profissionais e entusiastas de pintura a calcular com precisão a quantidade de tinta necessária para seus projetos, evitando desperdícios e economizando recursos.</p>
+                <p>Nossa calculadora foi desenvolvida com base em anos de experiência no mercado de pintura profissional.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nossos Trabalhos</h2>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Projeto de pintura residencial">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Pintura comercial">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Pintura de luxo">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Texturas especiais">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Histórias de Sucesso</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>Depois do curso, consegui aumentar meus ganhos em 300%. Agora tenho uma lista de clientes fiéis e trabalho apenas com projetos de alto padrão.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Silva" class="author-avatar">
-                        <div>
-                            <h4>Carlos Silva</h4>
-                            <p>Pintor há 8 anos</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>As técnicas de gestão de negócio foram transformadoras. Aprendi a precificar meus serviços corretamente e hoje tenho uma empresa com 5 funcionários.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Santos" class="author-avatar">
-                        <div>
-                            <h4>Ana Santos</h4>
-                            <p>Proprietária da Anature Pinturas</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>Os workshops práticos me deram a confiança para oferecer serviços de pintura decorativa que são muito mais valorizados no mercado.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="João Mendes" class="author-avatar">
-                        <div>
-                            <h4>João Mendes</h4>
-                            <p>Especialista em pinturas decorativas</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta" id="cta">
-        <div class="container">
-            <h2>Pronto para Transformar sua Carreira?</h2>
-            <p>Junte-se a centenas de pintores que elevaram seu padrão de trabalho e conquistaram reconhecimento no mercado</p>
-            <a href="#" class="btn btn-light">Inscreva-se no Próximo Workshop</a>
         </div>
     </section>
 
@@ -213,27 +101,11 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Pintores de Elite</h3>
-                    <p>Elevando o padrão da profissão de pintor através de treinamentos, técnicas inovadoras e gestão de negócios.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
+                    <p>Calculadora inteligente para projetos de pintura</p>
                 </div>
                 <div class="footer-section">
                     <h3>Contato</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Av. das Artes, 123, São Paulo</p>
-                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
                     <p><i class="fas fa-envelope"></i> contato@pintoresdeelite.com.br</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Newsletter</h3>
-                    <p>Inscreva-se para receber dicas e novidades exclusivas</p>
-                    <form>
-                        <input type="email" placeholder="Seu e-mail">
-                        <button type="submit">Inscrever</button>
-                    </form>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -271,7 +143,7 @@
             
             if (areaTotal <= 0) {
                 resultadoDiv.innerHTML = "Por favor, insira valores válidos para largura e altura.";
-                resultadoDiv.style.color = "red";
+                resultadoDiv.style.color = "#e74c3c";
             } else {
                 resultadoDiv.innerHTML = `
                     <p>Área total a ser pintada: <strong>${areaTotal.toFixed(2)} m²</strong></p>
@@ -279,7 +151,7 @@
                     <p>Latas de 3.6L: <strong>${Math.ceil(litrosNecessarios / 3.6)}</strong></p>
                     <p>Latas de 18L: <strong>${Math.ceil(litrosNecessarios / 18)}</strong></p>
                 `;
-                resultadoDiv.style.color = "green";
+                resultadoDiv.style.color = "#27ae60";
             }
         }
     </script>
