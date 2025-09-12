@@ -5,11 +5,11 @@
 }
 
 :root {
-    --primary: #171515;
-    --secondary: #2F4858;
-    --accent: #171515;
-    --light: #F8F9FA;
-    --dark: #212529;
+    --primary: #00bfbf;
+    --secondary: #ffffff;
+    --accent: #00bfbf;
+    --light: #000000;
+    --dark: #ffffff;
 }
 
 body {
